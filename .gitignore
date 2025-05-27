@@ -1,3 +1,5 @@
 .env
 .DS_Store
 debate-agent
+go.mod
+go.sum
