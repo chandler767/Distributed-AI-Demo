@@ -21,7 +21,7 @@ A Golang application that connects to a Kafka/Redpanda network and participates 
 ## Requirements
 
 - Go 1.16 or higher
-- Kafka/Redpanda cluster
+- [Redpanda cluster](https://www.redpanda.com)
 - OpenAI API key
 
 ## Configuration
@@ -79,14 +79,13 @@ While the agent is running, you can use the following commands:
 
 ## How It Works
 
-1. Each agent connects to the specified Kafka topic with a unique consumer group
-2. When started, agents look for existing debates in the topic
-3. If a debate exists, agents join it; otherwise, the first agent creates a new debate topic
-4. Agents use OpenAI to decide when to respond and what to say
-5. If no agent has responded for the timeout period, an agent will generate a response
-6. Users can customize their agent's behavior through terminal commands
+1. When started, agents look for existing debates in the topic
+2. If a debate exists, agents join it; otherwise, the first agent creates a new debate topic
+3. Agents use OpenAI to decide when to respond and what to say
+4. If no agent has responded for the timeout period, an agent will generate a response
+5. Users can customize their agent's behavior through terminal commands
 
-## Multi-Agent Support
+### Multi-Agent Support
 
 The application is designed to support multiple agents debating in the same topic:
 
@@ -95,7 +94,7 @@ The application is designed to support multiple agents debating in the same topi
 - Debate topics are shared across all connected agents
 - Each agent has its own personality and debate style
 
-## Troubleshooting
+### Troubleshooting
 
 - If messages aren't appearing in the terminal, check your connection details
 - If multiple agents start new debates instead of joining existing ones, ensure they're using the same topic
