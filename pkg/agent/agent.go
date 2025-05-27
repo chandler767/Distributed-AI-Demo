@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/chandler767/Distributed-AI-Demo/ai-debate-agent/pkg/kafka"
-	"github.com/chandler767/Distributed-AI-Demo/ai-debate-agent/pkg/types"
+	"github.com/chandler767/Distributed-AI-Demo/pkg/kafka"
+	"github.com/chandler767/Distributed-AI-Demo/pkg/types"
 
 	"github.com/sashabaranov/go-openai"
 )

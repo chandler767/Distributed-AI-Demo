@@ -12,12 +12,12 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/chandler767/Distributed-AI-Demo/pkg/agent"
+	"github.com/chandler767/Distributed-AI-Demo/pkg/config"
+	"github.com/chandler767/Distributed-AI-Demo/pkg/kafka"
+	"github.com/chandler767/Distributed-AI-Demo/pkg/types"
+	"github.com/chandler767/Distributed-AI-Demo/pkg/ui"
 	"github.com/google/uuid"
-	"github.com/user/ai-debate-agent/pkg/agent"
-	"github.com/user/ai-debate-agent/pkg/config"
-	"github.com/user/ai-debate-agent/pkg/kafka"
-	"github.com/user/ai-debate-agent/pkg/types"
-	"github.com/user/ai-debate-agent/pkg/ui"
 )
 
 func main() {

@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/chandler767/Distributed-AI-Demo/ai-debate-agent/pkg/config"
+	"github.com/chandler767/Distributed-AI-Demo/pkg/config"
 	"github.com/twmb/franz-go/pkg/kgo"
 	"github.com/twmb/franz-go/pkg/sasl"
 	"github.com/twmb/franz-go/pkg/sasl/scram"

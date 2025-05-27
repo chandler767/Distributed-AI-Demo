@@ -44,17 +44,23 @@ OPENAI_API_KEY=YOUR-OPENAI-API-KEY-HERE
 
 ## Usage
 
-1. Build the application:
+1. Project setup:
    ```
-   go build ./cmd
+   go mod init github.com/chandler767/Distributed-AI-Demo
+   go mod tidy
    ```
 
-2. Run the application:
+2. Build the application:
+   ```
+   go build -o debate-agent ./cmd
+   ```
+
+3. Run the application:
    ```
    ./debate-agent
    ```
 
-3. Multiple agents can be started in different terminals to participate in the same debate.
+4. Multiple agents can be started in different terminals to participate in the same debate.
 
 ## Terminal Commands
 
@@ -91,11 +97,6 @@ The application is designed to support multiple agents debating in the same topi
 
 ## Troubleshooting
 
-- If messages aren't appearing in the terminal, check your Kafka connection details
-- The "context canceled" error during shutdown is normal and can be ignored
+- If messages aren't appearing in the terminal, check your connection details
 - If multiple agents start new debates instead of joining existing ones, ensure they're using the same topic
-- For any connection issues, verify your Kafka/Redpanda cluster is running and accessible
-
-## License
-
-MIT
+- For any connection issues, verify your Redpanda cluster is running and accessible
