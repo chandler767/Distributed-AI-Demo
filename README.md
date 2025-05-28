@@ -20,7 +20,7 @@ A Golang application that connects to a Kafka/Redpanda network and participates 
 
 ## Requirements
 
-- Go 1.16 or higher
+- Go 1.20 or higher
 - [Redpanda cluster](https://www.redpanda.com)
 - OpenAI API key
 
