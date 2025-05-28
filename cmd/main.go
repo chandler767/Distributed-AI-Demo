@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"io"
 	"log"
 	"math/rand"
 	"os"
@@ -21,10 +20,6 @@ import (
 )
 
 func main() {
-	// Set random seed
-	rand.Seed(time.Now().UnixNano())
-	log.SetOutput(io.Discard)
-
 	// Load configuration
 	cfg, err := config.LoadConfig()
 	if err != nil {
@@ -42,6 +37,14 @@ func main() {
 
 	// Generate a unique agent ID
 	agentID := generateAgentID()
+
+	// Use agentID as the log file name
+	logFileName := fmt.Sprintf("%s.log", agentID)
+	logFile, err := os.OpenFile(logFileName, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+	if err != nil {
+		log.Fatalf("Failed to open log file: %v", err)
+	}
+	log.SetOutput(logFile)
 
 	// Create a unique consumer group for this agent instance
 	// This ensures each agent receives all messages
