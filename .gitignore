@@ -3,3 +3,4 @@
 debate-agent
 go.mod
 go.sum
+*.log
