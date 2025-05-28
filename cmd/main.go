@@ -40,7 +40,13 @@ func main() {
 
 	// Use agentID as the log file name
 	logFileName := fmt.Sprintf("%s.log", agentID)
-	logFile, err := os.OpenFile(logFileName, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+	// Ensure logs directory exists
+	logDir := "logs"
+	if err := os.MkdirAll(logDir, 0755); err != nil {
+		log.Fatalf("Failed to create logs directory: %v", err)
+	}
+	logFilePath := fmt.Sprintf("%s/%s", logDir, logFileName)
+	logFile, err := os.OpenFile(logFilePath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
 	if err != nil {
 		log.Fatalf("Failed to open log file: %v", err)
 	}
