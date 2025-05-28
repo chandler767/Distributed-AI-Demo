@@ -323,6 +323,7 @@ Respond with only "yes" or "no".`,
 }
 
 // generateResponse generates a response to the debate
+// Todo replace with agent framework for responses
 func (a *Agent) generateResponse(ctx context.Context, history []types.DebateMessage) (string, error) {
 	a.mu.Lock()
 	debateTopic := a.DebateTopic
@@ -432,6 +433,10 @@ Available Commands:
 - timeout <seconds> - Set response timeout in seconds
 - new - Start a new debate topic
 - help - Show this help message
+Navigation:
+- Tab - Switch focus between message view and input
+- PgUp/PgDn - Scroll through message history
+- Home/End - Jump to beginning/end of message history
 `
 		feedbackMsg := types.DebateMessage{
 			AgentID:   "System",
