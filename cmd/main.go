@@ -100,27 +100,22 @@ func main() {
 	}
 }
 
-// generateAgentID generates a unique agent ID
+// generateAgentID generates a unique agent ID with a panda or redpanda theme
 func generateAgentID() string {
-	// Generate a random adjective
+	// Panda or Redpanda themed adjectives
 	adjectives := []string{
-		"Curious", "Thoughtful", "Analytical", "Logical", "Creative",
-		"Wise", "Eloquent", "Insightful", "Rational", "Skeptical",
-		"Balanced", "Objective", "Critical", "Reflective", "Philosophical",
+		"Playful", "Gentle", "Bamboo", "Cuddly", "Red",
+		"Chubby", "Curious", "Lazy", "Fluffy", "Mischievous",
+		"Peaceful", "Adorable", "Sleepy", "Friendly", "Cheerful",
+	}
+	// Panda or Redpanda themed nouns
+	nouns := []string{
+		"Panda", "Redpanda", "Cub", "Bear", "BambooEater",
+		"TreeClimber", "Napster", "Furball", "Snuggler", "LeafLover",
+		"ForestDweller", "PandaPal", "BambooBuddy", "PandaSage", "RedTail",
 	}
 	adjective := adjectives[rand.Intn(len(adjectives))]
-
-	// Generate a random noun
-	nouns := []string{
-		"Thinker", "Scholar", "Philosopher", "Debater", "Reasoner",
-		"Mind", "Intellect", "Sage", "Logician", "Analyst",
-		"Orator", "Inquirer", "Examiner", "Investigator", "Theorist",
-	}
 	noun := nouns[rand.Intn(len(nouns))]
-
-	// Generate a short UUID suffix
 	uuidSuffix := strings.Split(uuid.New().String(), "-")[0]
-
-	// Combine to form the agent ID
 	return fmt.Sprintf("%s%s-%s", adjective, noun, uuidSuffix)
 }
